@@ -18,46 +18,46 @@
 
   <div class="mb-3">
     <label for="title" class="fw-bolder form-label text-uppercase col">title</label>
-    <input type="text" class="form-control col" id="title" placeholder="Product Title">
+    <input type="text" class="form-control  col" id="title" placeholder="Product Title">
   </div>
 
 
   <div class="mb-3 col-3">
-    <label for="taxes" class="fw-bolder form-label text-uppercase ">taxes</label>
-    <input type="number" class="form-control " id="taxes" placeholder="Product taxes">
+    <label for="price" class="fw-bolder form-label text-uppercase ">price</label>
+    <input type="number" class="form-control  "  onkeyup="calcTotal()" id="price" placeholder="Product price">
   </div>
 
   <div class="mb-3 col-3">
     <label for="ads" class="fw-bolder form-label text-uppercase ">ads</label>
-    <input type="number" class="form-control " id="ads" placeholder="Product ads">
+    <input type="number" class="form-control  "  onkeyup="calcTotal()"  id="ads" placeholder="Product ads">
   </div>
 
   <div class="mb-3 col-3  ">
     <label for="discount" class="fw-bolder form-label text-uppercase ">discount</label>
-    <input type="number" class="form-control " id="discount" placeholder="Product discount">
+    <input type="number" class="form-control  " id="discount"  onkeyup="calcTotal()"  placeholder="Product discount">
   </div>
 
   <div class="mb-3 col-3  ">
     <label for="total" class="fw-bolder form-label text-uppercase bg-info text-light border rounded px-2">total</label>
-    <input type="number" class="form-control bg-info text-light " id="total" placeholder="Product total">
+<p id="total" class="fw-bolder">0</p>
   </div>
 
   <div class="mb-3 col-12 ">
     <label for="category" class="fw-bolder form-label text-uppercase  ">category</label>
-    <input type="text" class="form-control  " id="category" placeholder="Product category">
+    <input type="text" class="form-control   " onkeyup="" id="category" placeholder="Product category">
   </div>
   <div class="mb-3 col-12 ">
     <label for="count" class="fw-bolder form-label text-uppercase  ">count</label>
-    <input type="number" class="form-control  " id="count" placeholder="Product count">
+    <input type="number" class="form-control   " id="count" placeholder="Product count">
   </div>
 
   <div class="button mb-3 col-12 mt-3 ">
-<button class="btn btn-primary col-12 rounded-5 ">Create</button>
+<button class="btn btn-primary col-12 rounded-5 " id="create">Create</button>
 </div>
 
 <div class="mb-3 col-12 ">
   <label for="search" class="fw-bolder form-label text-uppercase  ">search</label>
-  <input type="text" class="form-control  " id="search" placeholder=" search here">
+  <input type="text" class="form-control   " id="search" placeholder=" search here">
 </div>
 
 
