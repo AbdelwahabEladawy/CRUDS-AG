@@ -10,9 +10,9 @@
 </head>
 <body >
 
-<div class="container mx-auto pt-5 ">
+<div class="container mx-auto ">
 <div class="inner ">
-<h1 class="text-capitalize p-5 text-center text-light">products management system</h1>
+<h1 class="text-capitalize p-5 text-center">products management system</h1>
 
 <div class="row align-items-center text-center">
 
@@ -47,7 +47,7 @@
     <input type="text" class="form-control   " onkeyup="" id="category" placeholder="Product category">
   </div>
   <div class="mb-3 col-12 ">
-    <label for="count" class="fw-bolder form-label text-uppercase  ">count</label>
+    <label for="count" class="fw-bolder form-label text-uppercase" id="count-l">count</label>
     <input type="number" class="form-control   " id="count" placeholder="Product count">
   </div>
 
@@ -57,25 +57,48 @@
 
 <div class="mb-3 col-12 ">
   <label for="search" class="fw-bolder form-label text-uppercase  ">search</label>
-  <input type="text" class="form-control   " id="search" placeholder=" search here">
+  <input type="text" class="form-control" id="search" placeholder=" search here" onkeyup="matchingData(this.value)">
 </div>
 
 
 <div class="button mb-3 col-6 mt-3 ">
-  <button class="btn btn-primary col-12 rounded-5 ">Search By Category</button>
+  <button class="btn btn-primary col-12 rounded-5 " id="category" onclick="searchMode(this.id)">Search By Category</button>
   </div>
 
   <div class="button mb-3 col-6 mt-3 ">
-    <button class="btn btn-primary col-12 rounded-5 ">Search By Title</button>
+    <button class="btn btn-primary col-12 rounded-5 " id="title" onclick="searchMode(this.id)">Search By Title</button>
     </div>
 
 
     <div class="button mb-3 col-12 mt-3 ">
-      <button class="btn btn-primary col-12 rounded-5 ">Delete All</button>
+      <button class="btn btn-primary col-12 rounded-5 d-none" id="deleteAll" onclick="delALL()">Delete All </button>
       </div>
 
 </div>
 </div>
+
+<table class="table mt-5">
+
+<thead>
+  <tr>
+ <td class="fw-bolder">Id</td>
+ <td class="fw-bolder">Title</td>
+ <td class="fw-bolder">Price</td>
+ <td class="fw-bolder">Ads</td>
+ <td class="fw-bolder">Discount</td>
+ <td class="fw-bolder">Total</td>
+ <td class="fw-bolder">Category</td>
+ <td class="fw-bolder">Update</td>
+ <td class="fw-bolder">Delete</td>
+  </tr>
+</thead>
+<thead id="data">
+
+</thead>
+</table>
+
+
+
 </div>
   
 
