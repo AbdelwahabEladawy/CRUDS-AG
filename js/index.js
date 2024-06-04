@@ -129,43 +129,53 @@ function searchMode(id) {
   search.value = "";
 }
 
+
 function matchingData(value) {
   var tablerow = "";
+  var found = false;
+
   if (sm == "title") {
     for (var i = 0; i < productList.length; i++) {
-      if (productList[i].name.includes(value)) {
+      if (productList[i].name.includes(value.toLowerCase())) {
         tablerow += `  <tr>
-    <td>${i + 1}</td>
-    <td>${productList[i].name}</td>
-    <td>${productList[i].price}</td>
-    <td>${productList[i].ads}</td>
-    <td>${productList[i].discount}</td>
-    <td>${productList[i].total}</td>
-    <td>${productList[i].category}</td>
-    <td><button class="btn btn-info" onclick="updateData(${i})">Update</button></td>
-    <td><button class="btn btn-danger" onclick="DeleteOne(${i})">Delete</button></td>
-    </tr>`;
-      }
-    }
-    document.getElementById("data").innerHTML = tablerow;
-  } else if(sm=="category") {
-    for (var i = 0; i < productList.length; i++) {
-      if (productList[i].category.includes(value)) {
-        tablerow += `  <tr>
-        <td>${i + 1}</td>
-        <td>${productList[i].name}</td>
-        <td>${productList[i].price}</td>
-        <td>${productList[i].ads}</td>
-        <td>${productList[i].discount}</td>
-        <td>${productList[i].total}</td>
-        <td>${productList[i].category}</td>
-        <td><button class="btn btn-info" onclick="updateData(${i})">Update</button></td>
-        <td><button class="btn btn-danger" onclick="DeleteOne(${i})">Delete</button></td>
+          <td>${i + 1}</td>
+          <td>${productList[i].name}</td>
+          <td>${productList[i].price}</td>
+          <td>${productList[i].ads}</td>
+          <td>${productList[i].discount}</td>
+          <td>${productList[i].total}</td>
+          <td>${productList[i].category}</td>
+          <td><button class="btn btn-info" onclick="updateData(${i})">Update</button></td>
+          <td><button class="btn btn-danger" onclick="DeleteOne(${i})">Delete</button></td>
         </tr>`;
+        found = true;
       }
     }
-    document.getElementById("data").innerHTML = tablerow;
+  } else if (sm == "category") {
+    for (var i = 0; i < productList.length; i++) {
+      if (productList[i].category.includes(value.toLowerCase())) {
+        tablerow += `  <tr>
+          <td>${i + 1}</td>
+          <td>${productList[i].name}</td>
+          <td>${productList[i].price}</td>
+          <td>${productList[i].ads}</td>
+          <td>${productList[i].discount}</td>
+          <td>${productList[i].total}</td>
+          <td>${productList[i].category}</td>
+          <td><button class="btn btn-info" onclick="updateData(${i})">Update</button></td>
+          <td><button class="btn btn-danger" onclick="DeleteOne(${i})">Delete</button></td>
+        </tr>`;
+        found = true;
+      }
+    }
   }
- 
+
+  document.getElementById("data").innerHTML = tablerow;
+
+  if (!found) {
+    document.getElementById("notFoundMessage").style.display = "block";
+  } else {
+    document.getElementById("notFoundMessage").style.display = "none";
   }
+}
 
